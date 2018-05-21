@@ -4,6 +4,6 @@ class OperationInfoList
 		@operation_info_list = operation_info_list
 	end
 	def get_message_sorted_by_line_name
-		operation_info_list.sort_by {|info| info.line_name_kana}
+		operation_info_list.sort_by {|info| info.line_name_kana}.map{|info| info.create_api_message}
 	end
 end
